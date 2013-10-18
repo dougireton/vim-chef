@@ -28,6 +28,6 @@ installing [pathogen.vim](https://github.com/tpope/vim-pathogen), and
 then simply copy and paste:
 
 ```bash
-    cd ~/.vim/bundle
-    git clone git://github.com/tpope/vim-sensible.git
+cd ~/.vim/bundle
+git clone git://github.com/dougireton/vim-chef.git
 ```
