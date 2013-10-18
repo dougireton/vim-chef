@@ -1,8 +1,10 @@
 # vim-chef
 
 vim-chef is a Vim plugin which detects Chef cookbook and Chef-Repo files and
-sets the filetype to 'ruby.chef'. This enables other plugins like Syntastic to
-work with Chef files, e.g. running Foodcritic automatically on file save.
+sets the filetype to 'ruby.chef'. This enables other plugins like
+[Syntastic](https://github.com/scrooloose/syntastic) to
+work with Chef files, e.g. running
+[Foodcritic](http://acrmp.github.io/foodcritic/) automatically on file save.
 
 vim-chef also appends to Vim's 'path' to make 'gf' work on include_recipe
 lines in Chef recipe files. For example, if you have these lines in your
