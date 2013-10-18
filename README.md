@@ -8,9 +8,11 @@ vim-chef also appends to Vim's 'path' to make 'gf' work on include_recipe
 lines in Chef recipe files. For example, if you have these lines in your
 cookbook's recipes/default.rb file:
 
-1. include_recipe 'git'
-2. include_recipe 'git::source'
-3. include_recipe 'current_cookbook::my_other_recipe'
+```ruby
+    include_recipe 'git'
+    include_recipe 'git::source'
+    include_recipe 'current_cookbook::my_other_recipe'
+```
 
 'gf' with the cursor on the recipes above would jump to
 'git/recipes/default.rb', 'git/recipes/source.rb', and
