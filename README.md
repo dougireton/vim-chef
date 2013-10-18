@@ -9,9 +9,9 @@ lines in Chef recipe files. For example, if you have these lines in your
 cookbook's recipes/default.rb file:
 
 ```ruby
-    include_recipe 'git'
-    include_recipe 'git::source'
-    include_recipe 'current_cookbook::my_other_recipe'
+include_recipe 'git'
+include_recipe 'git::source'
+include_recipe 'current_cookbook::my_other_recipe'
 ```
 
 'gf' with the cursor on the recipes above would jump to
