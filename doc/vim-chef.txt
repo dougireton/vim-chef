@@ -1,0 +1,24 @@
+*vim-chef* - Goto File for Chef cookbook include_recipe
+
+Author:  Doug Ireton <http://dougireton.com>
+License: Apache 2.0
+
+1. Introduction                                      *vim-chef*
+
+vim-chef is a Vim plugin which detects Chef cookbook and Chef-Repo files and
+sets the filetype to 'ruby.chef'. This enables other plugins like Syntastic to
+work with Chef files, e.g. running Foodcritic automatically on file save.
+
+vim-chef also appends to Vim's 'path' to make 'gf' work on include_recipe
+lines in Chef recipe files. For example, if you have these lines in your
+cookbook's recipes/default.rb file: >
+
+    1. include_recipe 'git'
+    2. include_recipe 'git::source'
+    3. include_recipe 'current_cookbook::my_other_recipe'
+<
+'gf' with the cursor on the recipes above would jump to
+'git/recipes/default.rb', 'git/recipes/source.rb', and
+current_cookbook/recipes/my_other_recipe' respectively.
+
+ vim:tw=78:ts=8:ft=help:norl:
