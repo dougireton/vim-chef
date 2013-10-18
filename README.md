@@ -1,4 +1,29 @@
-vim-chef
-========
+# vim-chef
 
-Vim ftplugin for enabling gf on include_recipe in Chef
+vim-chef is a Vim plugin which detects Chef cookbook and Chef-Repo files and
+sets the filetype to 'ruby.chef'. This enables other plugins like Syntastic to
+work with Chef files, e.g. running Foodcritic automatically on file save.
+
+vim-chef also appends to Vim's 'path' to make 'gf' work on include_recipe
+lines in Chef recipe files. For example, if you have these lines in your
+cookbook's recipes/default.rb file:
+
+1. include_recipe 'git'
+2. include_recipe 'git::source'
+3. include_recipe 'current_cookbook::my_other_recipe'
+
+'gf' with the cursor on the recipes above would jump to
+'git/recipes/default.rb', 'git/recipes/source.rb', and
+current_cookbook/recipes/my_other_recipe' respectively.
+
+
+## Installation
+
+If you don't have a preferred installation method, I recommend
+installing [pathogen.vim](https://github.com/tpope/vim-pathogen), and
+then simply copy and paste:
+
+```bash
+    cd ~/.vim/bundle
+    git clone git://github.com/tpope/vim-sensible.git
+```
