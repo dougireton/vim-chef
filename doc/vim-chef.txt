@@ -3,7 +3,7 @@
 Author:  Doug Ireton <http://dougireton.com>
 License: Apache 2.0
 
-1. Introduction                                      *vim-chef*
+1. Introduction                                      *vim-chef-introduction*
 
 vim-chef is a Vim plugin which detects Chef cookbook and Chef-Repo files and
 sets the filetype to 'ruby.chef'. This enables other plugins like Syntastic to
