@@ -7,6 +7,9 @@
 syntax match chefBuiltinResource "^\s*\<\%(
       \apt_package\|
       \bash\|
+      \batch\|
+      \bff_package\|
+      \breakpoint\|
       \chef_gem\|
       \cookbook_file\|
       \cron\|
@@ -51,10 +54,25 @@ syntax match chefBuiltinResource "^\s*\<\%(
       \subversion\|
       \template\|
       \user\|
-      \yum_package\|
-      \)\>"
+      \yum_package
+      \\)\>"
+
+syntax match chefWindowsResource "^\s*\<windows_\%(
+      \auto_run\|
+      \batch\|
+      \feature\|
+      \package\|
+      \path\|
+      \printer_port\|
+      \printer\|
+      \reboot\|
+      \registry\|
+      \task\|
+      \zipfile
+      \\)\>"
 
 highlight link chefBuiltinResource Function
+highlight link chefWindowsResource Function
 
 " Delete b:current_syntax so that when we load a Ruby file it will reload the
 " Ruby syntax file
