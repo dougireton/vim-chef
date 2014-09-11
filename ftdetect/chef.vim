@@ -12,11 +12,10 @@
 " WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 " See the License for the specific language governing permissions and
 " limitations under the License.
-
-autocmd BufNewFile,BufRead */cookbooks/*/\(attributes\|definitions\|libraries\|providers\|recipes\|resources\)/*.rb set filetype=ruby.chef
-
-autocmd BufNewFile,BufRead */cookbooks/*/templates/*/*.erb set filetype=eruby.chef
-autocmd BufNewFile,BufRead */cookbooks/*/metadata.rb set filetype=ruby.chef
-
-autocmd BufNewFile,BufRead */chef-repo/environments/*.rb set filetype=ruby.chef
-autocmd BufNewFile,BufRead */chef-repo/roles/*.rb set filetype=ruby.chef
+"set filetype to ruby.chef only if rb/erb file is in site-cookbooks/cookbooks folder
+"this will work also if you try to edit file from any place even from cookbook folder
+autocmd BufNewFile,BufRead * if expand('%:p') =~'**/chef.*/.*cookbooks/.*/\(attributes\|definitions\|libraries\|providers\|recipes\|resources\)/.*.rb'| set filetype=ruby.chef | endif
+autocmd BufNewFile,BufRead * if expand('%:p') =~'**/chef.*/.*cookbooks/.*/templates/*/*.erb'| set filetype=eruby.chef | endif
+autocmd BufNewFile,BufRead * if expand('%:p') =~'**/chef.*/.*cookbooks/.*/metadata.rb'| set filetype=ruby.chef | endif
+autocmd BufNewFile,BufRead if expand('%:p') =~'**/chef.*/environments/*.rb'| set filetype=ruby.chef | endif
+autocmd BufNewFile,BufRead if expand('%:p') =~'**/chef.*/roles/*.rb'| set filetype=ruby.chef | endif
